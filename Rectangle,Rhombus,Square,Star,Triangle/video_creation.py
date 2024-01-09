@@ -17,14 +17,14 @@ duration = 10  # in seconds
 def draw_shape(shape_type):
     if shape_type == 'triangle':
         size = np.random.randint(50, 150)
-        x = np.random.randint(100, width - size)
-        y = np.random.randint(100, height - size)
+        x = np.random.randint(0, width - size)
+        y = np.random.randint(0, height - size)
         points = np.array([
-            [0, 0],
-            [1, 0],
-            [0.5, 1],
+            [x + size / 2, y + size],
+            [x, y],
+            [x + size, y],
         ])
-        triangle = patches.Polygon(points * size + [x, y], fc='black')
+        triangle = patches.Polygon(points, fc='red')
         plt.gca().add_patch(triangle)
     elif shape_type == 'square':
         side_length = np.random.randint(50, 150)
@@ -53,7 +53,7 @@ def draw_shape(shape_type):
         size = np.random.randint(50, 150)
         x = np.random.randint(150, width - size)
         y = np.random.randint(150, height - size)
-        rhombus = patches.RegularPolygon((x, y), numVertices=4, radius=size/np.sqrt(2), orientation=np.pi/4, fc='red')
+        rhombus = patches.RegularPolygon((x, y), numVertices=8, radius=size/np.sqrt(2), orientation=np.pi/4, fc='red')
         plt.gca().add_patch(rhombus)
     elif shape_type == 'rectangle':
         width_rect = np.random.randint(50, 200)
@@ -68,7 +68,7 @@ def draw_shape(shape_type):
 plt.axis('off')
 
 # Generate videos for each shape
-shapes = ['traiangle', 'square', 'star', 'rhombus', 'rectangle']
+shapes = ['triangle', 'square', 'star', 'rhombus', 'rectangle']
 
 for shape in shapes:
     # Set the output video file path for each shape
@@ -96,7 +96,7 @@ for shape in shapes:
     # Use FFmpeg to create a video from the frames
     ffmpeg_command = (
         f"ffmpeg -framerate {fps} -i {temp_dir}/frame_%03d.png "
-        f"-c:v libx264 -pix_fmt yuv420p -y {output_video_path}"
+        f"-c:v libx265 -pix_fmt yuv420p -y {output_video_path}"
     )
     subprocess.run(ffmpeg_command, shell=True)
 

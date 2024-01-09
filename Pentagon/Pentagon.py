@@ -27,7 +27,7 @@ def create_pentagon_motion_video(output_path, width, height, duration, fps):
     radius = 100
     num_frames = int(duration * fps)
 
-    fourcc = cv2.VideoWriter_fourcc(*"mp4v")
+    fourcc = cv2.VideoWriter_fourcc(*"avc1")
     out = cv2.VideoWriter(output_path, fourcc, fps, (width, height))
 
     for frame_count in range(num_frames):

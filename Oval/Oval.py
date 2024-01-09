@@ -25,7 +25,7 @@ def create_oval_motion_video(output_path, width, height, duration, fps):
     radius_y = 50  # You can adjust this value for a more elongated or squashed oval
     num_frames = int(duration * fps)
 
-    fourcc = cv2.VideoWriter_fourcc(*"mp4v")
+    fourcc = cv2.VideoWriter_fourcc(*"avc1")
     out = cv2.VideoWriter(output_path, fourcc, fps, (width, height))
 
     for frame_count in range(num_frames):
