@@ -9,8 +9,8 @@ For Example, The FFMPEG folder consists of all the videos which are made using t
 
 For Example, The OpenCV folder consists of all the videos which are made using the FFMPEG library. There are videos of 5 geometrical shapes and those shapes are point, circle, pentagon, hexagon, and octagon. Inside the FFMPEG folder, there are two more folders.
 
-1) AVC videos -> 1024*1024 pixel videos and 800*600 pixel videos
-2) HEVC videos -> 1024*1024 pixel videos and 800*600 pixel videos
+1) AVC videos -> 1024 * 1024 pixels videos and 800 * 600 pixels videos
+2) HEVC videos -> 1024 * 1024 pixels videos and 800 * 600 pixels videos
 
 To create a diverse set of videos we have used different specifications for the videos. Even though the video appears to be the same each video differs to one another depending on the specifications used for video construction. The specifications which are configurable and changed in each video are :
 
