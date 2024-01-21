@@ -45,7 +45,8 @@ def draw_shape(shape_type):
         size = np.random.randint(50, 150)
         x = np.random.randint(150, width - size)
         y = np.random.randint(150, height - size)
-        rhombus = patches.RegularPolygon((x, y), numVertices=8, radius=size/np.sqrt(2), orientation=np.pi/4, fc='blue')
+        orientation = np.random.uniform(0, 2 * np.pi)  
+        rhombus = patches.RegularPolygon((x, y), numVertices=4, radius=size/np.sqrt(2), orientation=orientation, fc='red')
         plt.gca().add_patch(rhombus)
     elif shape_type == 'rectangle':
         width_rect = np.random.randint(50, 200)
