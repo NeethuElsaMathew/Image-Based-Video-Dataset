@@ -13,7 +13,7 @@ The folder structure looks like below :
 1) AVC videos -> 1024 * 1024 pixels videos and 800 * 600 pixels videos
 2) HEVC videos -> 1024 * 1024 pixels videos and 800 * 600 pixels videos
 
-Moreover the name of the video file also suggest the specification. For example if you open a video file named 'rectangle__1024x1024_red' inside FFMPEG->HEVC->1024 * 1024 pixels videos,
+Moreover the name of the video file also suggest the specification. For example if you open a video file named 'rectangle__1024x1024_red_30fps' inside FFMPEG->HEVC->1024 * 1024 pixels videos,
 it means it is a video of a red color rectangle with frame size 1024*1024 and frame rate 30fps whose video codec is HEVC.
 
 To create a diverse set of videos we have used different specifications for the videos. Even though the video appears to be the same each video differs to one another depending on the specifications used for video construction. The specifications which are configurable and changed in each video are :
